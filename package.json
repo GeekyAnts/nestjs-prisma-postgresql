@@ -1,0 +1,20 @@
+{
+  "name": "nestjs-prisma-postgresql",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "service:server": "npm run start:dev -w @services/server",
+    "generate:sdk": "swagger-codegen generate -i services/server/storage/api-docs.json --additional-properties modelPropertyNaming=snake_case -l typescript-axios -o services/api-sdk -c sdk-config.json",
+    "build:sdk": "npm run generate:sdk && npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GeekyAnts/nestjs-prisma-postgresql.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "private": "true",
+  "workspaces": [
+    "services/*"
+  ]
+}
